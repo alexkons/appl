@@ -1,1 +1,17 @@
+#!/usr/bin/env bash
+
+# Shorthand for `history` with added grepping
+h() { history | grep "$1"; }
+
+# List disk usage of all the files in a directory (use -hr to sort on server)
+disk-usage() { du -hs "$@" | sort -nr; }
+
+# Compare the contents of 2 directories
+dirdiff() { diff -u <( ls "$1" | sort)  <( ls "$2" | sort ); }
+
+# Creates a *.tar.gz archive of a file or folder
+mktar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
+
+# Create a *.zip archive of a file or folder
+mkzip() { zip -r "${1%%/}.zip" "$1" ; }
 
