@@ -1,1 +1,20 @@
+#!/usr/bin/env bash
 
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias xs='cd'
+alias vf='cd'
+alias moer='more'
+alias moew='more'
+alias kk='ll'
+alias h='history'
+
+alias lr='ls -R | grep ":$" | sed -e 's/:$//' -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"' # Tree like list directories
+alias duchs='du -chs * | sort -rn | head' # Find Largest Top 10 Files and Directories 
+
+# Help files 
+alias hh="$HOME/scripts/help.sh"    # Big Data commands
+alias tt="$HOME/scripts/tricks.sh"  # Neat shell tricks 
